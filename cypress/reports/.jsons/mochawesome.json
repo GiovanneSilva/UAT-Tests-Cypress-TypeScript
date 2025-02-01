@@ -1,0 +1,191 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-01T21:33:05.319Z",
+    "end": "2025-02-01T21:33:06.228Z",
+    "duration": 909,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 4,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "ee72319d-3437-48ee-a4b1-d5154ac97dfc",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.spec.ts",
+      "file": "cypress\\e2e\\login.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2e970e93-1ef4-45fc-baec-8835f2905bea",
+          "title": "Login Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login successfully with valid credentials",
+              "fullTitle": "Login Tests should login successfully with valid credentials",
+              "timedOut": null,
+              "duration": 839,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\login.spec.ts\\\\Login Tests -- should login successfully with valid credentials -- before each hook (failed).png\"\n    ]\n  ]\n}",
+              "code": "loginPage.login(users.admin.username, users.admin.password);\ncy.url().should('include', messages.success.loginSuccess);",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://opensource-demo.orangehrmlive.com/web/index.php/auth/login\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login Tests`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://opensource-demo.orangehrmlive.com/web/index.php/auth/login\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login Tests`\n    at <unknown> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:130698:76)\n    at visitFailedByErr (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:130104:12)\n    at <unknown> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:130681:13)\n    at tryCatcher (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at __webpack_modules__../cypress/support/pages/LoginPage.ts.LoginPage.visit (webpack://projectautomationtestsuat/./cypress/support/pages/LoginPage.ts:31:0)\n    at Context.eval (webpack://projectautomationtestsuat/./cypress/e2e/login.spec.ts:19:0)",
+                "diff": null
+              },
+              "uuid": "00f09930-59e9-4d32-931c-05da164de967",
+              "parentUUID": "2e970e93-1ef4-45fc-baec-8835f2905bea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error with invalid credentials",
+              "fullTitle": "Login Tests should show error with invalid credentials",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.login(users.invalid.username, users.invalid.password);\nloginPage.verifyErrorMessage(messages.errors.invalidCredentials, LoginElements_1.LoginElements.errorMessage);",
+              "err": {},
+              "uuid": "0897d83f-ebe3-484b-9a75-aafc92d881c3",
+              "parentUUID": "2e970e93-1ef4-45fc-baec-8835f2905bea",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should login successfully with dynamic user",
+              "fullTitle": "Login Tests should login successfully with dynamic user",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var dynamicUser = TestData_1.TestData.generateRandomUser();\nloginPage.login(dynamicUser.username, dynamicUser.password);",
+              "err": {},
+              "uuid": "c132078b-cffc-4617-8c99-130d1b31192a",
+              "parentUUID": "2e970e93-1ef4-45fc-baec-8835f2905bea",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should login as specific role",
+              "fullTitle": "Login Tests should login as specific role",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var adminUser = TestData_1.TestData.getUserByRole('admin');\nloginPage.login(adminUser.username, adminUser.password);",
+              "err": {},
+              "uuid": "30963279-1566-4b7f-9bc3-d4024b77e57d",
+              "parentUUID": "2e970e93-1ef4-45fc-baec-8835f2905bea",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should show required field messages",
+              "fullTitle": "Login Tests should show required field messages",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.login('inputAutoDelete', 'inputAutoDelete', true);\nloginPage.verifyErrorMessage(messages.errors.requiredUsername, LoginElements_1.LoginElements.errorMessageRequiredUsername);",
+              "err": {},
+              "uuid": "bdaad85d-b95f-4208-b62e-93d023e6877b",
+              "parentUUID": "2e970e93-1ef4-45fc-baec-8835f2905bea",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "00f09930-59e9-4d32-931c-05da164de967"
+          ],
+          "pending": [],
+          "skipped": [
+            "0897d83f-ebe3-484b-9a75-aafc92d881c3",
+            "c132078b-cffc-4617-8c99-130d1b31192a",
+            "30963279-1566-4b7f-9bc3-d4024b77e57d",
+            "bdaad85d-b95f-4208-b62e-93d023e6877b"
+          ],
+          "duration": 839,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "Custom Test Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "json": true,
+        "saveJson": true,
+        "html": false
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "projectautomationtestsuat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "delete:reports": "if exist cypress\\reports (rmdir /s /q cypress\\reports)",
+    "create:reports:folder": "mkdir cypress\\reports cypress\\reports\\.jsons",
+    "prereport": "npm run delete:reports && npm run create:reports:folder",
+    "cy:run": "cypress run",
+    "test": "npm run prereport && npm run cy:run && npm run merge:json && npm run generate:report && npm run open:report",
+    "merge:json": "npx mochawesome-merge \"cypress/reports/.jsons/*.json\" > cypress/reports/mochawesome.json",
+    "generate:report": "npx marge cypress/reports/mochawesome.json -f report -o cypress/reports --charts true",
+    "open:report": "start cypress\\reports\\report.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.0.0",
+    "cypress-mochawesome-reporter": "^3.8.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "typescript": "^5.7.3"
+  }
+}

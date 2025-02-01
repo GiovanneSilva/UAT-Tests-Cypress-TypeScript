@@ -1,0 +1,10 @@
+{
+    "errors": {
+        "invalidCredentials": "Invalid credentials",
+        "requiredUsername": "Required",
+        "requiredPassword": "Required"
+    },
+    "success": {
+        "loginSuccess": "dashboard"
+    }
+} 
